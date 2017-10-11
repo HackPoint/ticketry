@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// adding bootstrap components
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +10,9 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    // bootstrap
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

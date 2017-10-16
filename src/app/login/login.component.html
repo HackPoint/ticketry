@@ -1,0 +1,25 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row">
+        <div class="col-md-4 push-md-4">
+            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+            <h1>Helpdesk - Ticketry</h1>
+            <form role="form" #loginComponent="ngForm" (ngSubmit)="onLoggedin(loginComponent)">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="name" name="email"
+                               class="form-control input-underline input-lg" id="" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" [(ngModel)]="password" name="password" class="form-control input-underline input-lg" id="" placeholder="Password">
+                    </div>
+                </div>
+                <button class="btn rounded-btn"type="submit">Log in</button>
+                &nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+                &nbsp;
+                <button class="btn rounded-btn btn-danger" (click)="googleLogin()">Google +</button>
+            </form>
+        </div>
+    </div>
+</div>

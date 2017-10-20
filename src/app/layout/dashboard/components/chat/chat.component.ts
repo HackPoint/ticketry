@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Severity, Ticket, TicketsService, TicketStatus} from '../../../../tickets/tickets.service';
 
 @Component({
     selector: 'app-chat',
@@ -7,6 +8,26 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ChatComponent implements OnInit {
     @Input() title: string;
-    constructor() { }
-    ngOnInit() { }
+    @Input() tickets: Ticket[];
+    @Input() color: string;
+
+    constructor(private ticketService: TicketsService) {
+    }
+    ngOnInit() {
+        /*GET*/
+
+
+        /*
+        * CREATE
+        * */
+        const newTicket = new Ticket();
+        newTicket.created = new Date();
+        newTicket.description = "Some lorem ipsum";
+        newTicket.status = TicketStatus.InProgress;
+        newTicket.severity = Severity.Low;
+        newTicket.summary = " Some lorem ipsum Some lorem ipsum Some lorem ipsum Some lorem ipsumSome lorem ipsum";
+        this.ticketService.create(newTicket).subscribe(() => {
+
+        });
+    }
 }

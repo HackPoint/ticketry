@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnInit } from '@angular/core';
 import {routerTransition} from '../../router.animations';
 import {Ticket, TicketsService, TicketStatus} from '../../tickets/tickets.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';

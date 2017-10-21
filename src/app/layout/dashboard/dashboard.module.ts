@@ -14,6 +14,7 @@ import {
     ChatComponent
 } from './components';
 import {StatModule} from '../../shared';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import {StatModule} from '../../shared';
         NgbAlertModule.forRoot(),
         DashboardRoutingModule,
         StatModule,
+        FormsModule
     ],
     declarations: [
         DashboardComponent,

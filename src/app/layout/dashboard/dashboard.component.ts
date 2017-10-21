@@ -1,7 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
 import {routerTransition} from '../../router.animations';
 import {Ticket, TicketsService, TicketStatus} from '../../tickets/tickets.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Observable} from "rxjs/Observable";
+import "rxjs/add/observable/fromEvent";
+import "rxjs/add/operator/debounceTime";
 
 @Component({
     selector: 'app-dashboard',
@@ -15,6 +18,8 @@ export class DashboardComponent implements OnInit {
     inProgress: Ticket[];
 
     tickets$: Ticket[];
+    @Input() search: string;
+
     constructor(private ticketService: TicketsService, private modalService: NgbModal) {
 
     }
@@ -34,4 +39,15 @@ export class DashboardComponent implements OnInit {
         }, (reason) => {
         });
     }
+
+    ngAfterViewInit() {
+        let inputElm = document.getElementById("searchTextField");
+        Observable.fromEvent(inputElm, 'keyup').debounceTime(200).subscribe(res => {
+            console.log(this.search)
+            // this will wait for 200ms and then this will called on input
+            // call you api here like
+            // this.get(searchText).subscribe();
+        });
+    }
+
 }

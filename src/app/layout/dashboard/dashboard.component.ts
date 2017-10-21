@@ -38,6 +38,13 @@ export class DashboardComponent implements OnInit {
         this.modalService.open(content).result.then((result) => {
         }, (reason) => {
         });
+
+        // const newTicket = new Ticket();
+        // newTicket.created = new Date();
+        // newTicket.description = "Some lorem ipsum";
+        // newTicket.status = TicketStatus.InProgress;
+        // newTicket.severity = Severity.Low;
+        // newTicket.summary = " Some lorem ipsum Some lorem ipsum Some lorem ipsum Some lorem ipsumSome lorem ipsum";
     }
 
     ngAfterViewInit() {

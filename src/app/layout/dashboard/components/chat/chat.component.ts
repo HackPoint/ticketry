@@ -20,14 +20,14 @@ export class ChatComponent implements OnInit {
         /*
         * CREATE
         * */
-        const newTicket = new Ticket();
-        newTicket.created = new Date();
-        newTicket.description = "Some lorem ipsum";
-        newTicket.status = TicketStatus.InProgress;
-        newTicket.severity = Severity.Low;
-        newTicket.summary = " Some lorem ipsum Some lorem ipsum Some lorem ipsum Some lorem ipsumSome lorem ipsum";
-        this.ticketService.create(newTicket).subscribe(() => {
-
-        });
+        // const newTicket = new Ticket();
+        // newTicket.created = new Date();
+        // newTicket.description = "Some lorem ipsum";
+        // newTicket.status = TicketStatus.InProgress;
+        // newTicket.severity = Severity.Low;
+        // newTicket.summary = " Some lorem ipsum Some lorem ipsum Some lorem ipsum Some lorem ipsumSome lorem ipsum";
+        // this.ticketService.create(newTicket).subscribe(() => {
+        //
+        // });
     }
 }
